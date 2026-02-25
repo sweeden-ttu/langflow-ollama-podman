@@ -17,8 +17,12 @@ This project provides a containerized deployment of LangFlow (a visual workflow 
 
 | Service    | Port  |
 |------------|-------|
-| granite4   | 55077 |
+| granite   | 55077 |
+| deepseek | 55088 |
 | qwen-coder | 66044 |
+| codellama | 66033 |
+
+Full mapping (all environments): **docs/AGENTS.md**.
 | LangFlow   | 7860  |
 
 ## Related Projects

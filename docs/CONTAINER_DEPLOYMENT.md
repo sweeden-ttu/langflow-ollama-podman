@@ -11,9 +11,13 @@
 
 | Service    | Container Port | Host Port |
 |------------|----------------|-----------|
-| granite4   | 11434          | 55077     |
-| qwen-coder | 11434          | 66044     |
+| granite   | 11434          | 55077     |
+| deepseek | 11434          | 55088     |
+| qwen-coder | 11434        | 66044     |
+| codellama | 11434         | 66033     |
 | LangFlow   | 7860           | 7860      |
+
+Full mapping (all environments): **docs/AGENTS.md**.
 
 ## Ollama Containers
 
