@@ -42,6 +42,14 @@ sync_project() {
     if [ "$uncommitted" -gt 0 ]; then
         log "  Found $uncommitted uncommitted changes"
     fi
+
+    if git rev-parse --verify "$remote_branch" >/dev/null 2>&1; then
+        local ahead=$(git rev-list --count "$remote_branch"..HEAD)
+        if [ "$ahead" -gt 0 ]; then
+            log "  Pushing $ahead commit(s) to remote..."
+            git push origin "$current_branch" || log "  Push failed (non-fatal)"
+        fi
+    fi
 }
 
 log "=== Starting daily GitHub sync ==="
