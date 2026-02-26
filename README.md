@@ -13,17 +13,18 @@ This project provides a containerized deployment of LangFlow (a visual workflow 
 - **Podman deployment** - Containerized deployment using Podman
 - **LangChain/LangGraph support** - Build complex AI pipelines with LangChain and LangGraph
 
-## Fixed Ports
+## Ollama port mapping (canonical)
 
-| Service    | Port  |
-|------------|-------|
-| granite   | 55077 |
-| deepseek | 55088 |
-| qwen-coder | 66044 |
-| codellama | 66033 |
+Same mapping across all Ollama projects. Workflows that use **@granite**, **@deepseek**, **@qwen-coder**, or **@codellama** call Ollama on the port for that model and environment.
 
-Full mapping (all environments): **docs/AGENTS.md**.
-| LangFlow   | 7860  |
+| Environment        | granite | deepseek | qwen-coder | codellama |
+|--------------------|---------|----------|------------|-----------|
+| Debug (VPN)        | 55077   | 55088    | 66044      | 66033     |
+| Testing +1 (macOS) | 55177   | 55188    | 66144      | 66133     |
+| Testing +2 (Rocky) | 55277   | 55288    | 66244      | 66233     |
+| Release +3        | 55377   | 55388    | 66344      | 66333     |
+
+See **docs/AGENTS.md** for details. LangFlow runs on port 7860.
 
 ## Related Projects
 
